@@ -11,6 +11,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 
 
+
 interface FlightData {
   id: number;
   city: string;
