@@ -55,7 +55,6 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ data }) => {
         (arrivalCity === "" || item.arrival === arrivalCity) &&
         (selectedDate === null || item.date === selectedDate.toLocaleDateString()) 
     );
-    console.log("resul",results);
    
 
     setSearchResults(results);
