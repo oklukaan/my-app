@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import dataInformation from '@/data.json';
 
+
 interface FlightData {
   id: number;
   city: string;
