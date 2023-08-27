@@ -1,3 +1,188 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.main-form{
+    min-width: 25em;
+    max-width: 40em;
+    width: 85%;
+    background: #fff;
+    border-radius: 0.5em;
+}
+
+.main-form select{
+    height: 5em;
+    max-height: 5em;
+    outline: 0;
+    box-shadow: 0 10px 25px rgba(163, 163, 162);
+    background: #1f9b78;
+    color: white;
+    width: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+.react-datepicker-wrapper{
+    width: 100%;
+}
+.custom-select input{
+    height: 5em;
+    max-height: 5em;
+    outline: 0;
+    box-shadow: 0 10px 25px rgba(163, 163, 162);
+    background: #1f9b78;
+    color: white;
+    width: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.main-form > .custom-select{
+    margin: 15px;
+    padding: 5px;
+    border-bottom: 0.063em solid #ededed !important;
+}
+
+.custom-select{
+position: relative;
+}
+
+.custom-arrow{
+    position: absolute;
+    top: 7%;
+    right: 1%;
+    display: block;
+    background: #1f9b78;
+    height: 88%;
+    width: 4em;
+    pointer-events: none;
+
+}
+
+.custom-arrow::before,
+.custom-arrow::after{
+    
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.custom-arrow::before{
+    border-left:1em solid transparent;
+    border-right:1em solid transparent;
+    border-bottom:1em solid rgb(255, 255, 255,0.5);
+    top: 30%;
+}
+.custom-arrow::after{
+    border-left:1em solid transparent;
+    border-right:1em solid transparent;
+    border-top:1em solid rgb(255, 255, 255,0.5);
+    top: 60%;
+}
+
+
+.main-form > *:focus {
+    background: none;
+    border: none;
+}
+
+.main-form button.search{
+    border-radius: 20px;
+    background-color: #1f9b78;
+    width: 90%;
+    color: white;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+    margin-bottom: 15px !important;
+    padding:8px;
+}
+
+.error-message{
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+table.table{
+    width:100%;
+}
+
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    font-weight: bold;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.styled-table svg{
+    display: inline-block;
+}
+
+.react-datepicker__input-container input::placeholder{
+    color: white;
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  /* Modal Container */
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+  }
+  
+  /* Close Button */
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+  }
+  

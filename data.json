@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "city": "Istanbul",
+    "flight": "TK123",
+    "date": "10.09.2023",
+    "arrival":"Ankara",
+    "empty_seats":15,
+    "filled_seats":25,
+    "price":300
+  },
+  {
+    "id": 2,
+    "city": "Ankara",
+    "flight": "AJ456",
+    "date": "30.08.2023",
+    "arrival":"Istanbul",
+    "empty_seats":15,
+    "filled_seats":25,
+    "price":400
+  },
+  {
+    "id": 3,
+    "city": "Adana",
+    "flight": "AJ454",
+    "date": "30.09.2023",
+    "arrival":"Istanbul",
+    "empty_seats":15,
+    "filled_seats":25,
+    "price":350
+  } ,
+  {
+    "id": 4,
+    "city": "Aydın",
+    "flight": "TK199",
+    "date": "10.09.2023",
+    "arrival":"Istanbul",
+    "empty_seats":15,
+    "filled_seats":25,
+    "price":250
+  },
+  {
+    "id": 5,
+    "city": "Mersin",
+    "flight": "TK119",
+    "date": "10.09.2023",
+    "arrival":"Hatay",
+    "empty_seats":15,
+    "filled_seats":25,
+    "price":500
+  },
+  {
+    "id": 6,
+    "city": "Istanbul",
+    "flight": "TK111",
+    "date": "10.09.2023",
+    "arrival":"Ankara",
+    "empty_seats":15,
+    "filled_seats":25,
+    "price":420
+  }
+
+]
