@@ -5,6 +5,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import Link from 'next/link'
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { CiLocationOn } from "react-icons/ci";
+
+
 
 
 
@@ -64,11 +67,16 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ data }) => {
   return (
     <div className="main-form">
       <div className="custom-select">
+     
+
       <select
         value={departureCity}
         onChange={(event) => setDepartureCity(event.target.value)}
       >
-        <option value="">Kalkış Yeri Seçin</option>
+
+        <option value="">
+          Kalkış Yeri Seçin
+          </option>
         {data
         .filter((item, index, self) => self.findIndex(t => t.city === item.city) === index)
         .map((item) => (
