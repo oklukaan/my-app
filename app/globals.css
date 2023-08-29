@@ -46,6 +46,9 @@
 .custom-select{
 position: relative;
 }
+.custom-select select,input{
+    padding-left: 15px;
+    }
 
 .custom-arrow{
     position: absolute;

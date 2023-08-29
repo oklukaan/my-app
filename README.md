@@ -26,8 +26,10 @@ eğer çalışmaz ise `npm run dev` komutu ile başlatabilirsiniz
 Projeyi başlattıktan sonra, tarayıcınızda `http://localhost:3000` adresine giderek uygulamayı görebilirsiniz.burada uygulamayı localhost:3000 de çalıştırmak önemli
 
 ## Önemli
-Şehir bulmak için data.json dosyandaki verilere bakarak variş kalkış ve tarih yerine
-göre aratma yapılabilir 
+-Şehir bulmak için data.json dosyandaki verilere bakarak variş kalkış ve tarih yerine
+göre aratma yapılabilir örnek (Ankara - İstanbul - 09/10/2023)
+
+-Ödeme sayfasına erişmek için login yapmalısınız
 
 ## Canlı ortam
 

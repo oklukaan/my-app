@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import "@/app/payment/spinner.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
   
 
@@ -25,26 +27,43 @@ const AnotherPage = ({ searchParams } : { searchParams: SearchParams }) => {
       const handleGoBack = () => {
         router.back();
       };  
+      
+      const  submitHandle =async (event:any) =>{
+        event.preventDefault();
 
-      function submitHandle(){
-        setIsLoading(true);
-        
-        setTimeout(()=>{
-            setIsLoading(false);
-          
-        },1000)
-        
-         setTimeout(()=>{
-            setIsModal(true);
-            setTimeout(()=>{
-                router.push('/');
-            },2000)
-           
-         },3000)
-         
+        const card_number=event.target[0].value;
+        const card_date=event.target[1].value;
+        const card_password=event.target[2].value;
+        const card_name=event.target[3].value;
+
+    
+        try {
+
+            if(card_number === '' || card_date === '' || card_password === '' || card_name === ''){
+                return toast("lütfen alanları doldurunuz")
+            }else{
+                
+                setIsLoading(true);
+                  
+                setTimeout(()=>{
+                    setIsLoading(false);
+                    setIsModal(true);
+                    router.push('/');
+                },1000)
+
+              
+                return;
+            }
+            
+        } catch (error) {
+            
+        }
+
+
+      
       
       }
-      
+    
     return(
     <div className="container">
         <div className="row">
@@ -126,44 +145,43 @@ const AnotherPage = ({ searchParams } : { searchParams: SearchParams }) => {
                                     </p>
                                     <p className="mb-0">
                                         <span className="fw-bold">Koltuk numaraları:</span>
-                                        <span className="c-green">{seatle?.join('-')}</span>
+                                        <span className="c-green">{typeof seatle === "string" ? seatle : seatle.join('-')}</span>
                                         
                                     </p>
                                    
                                 </div>
                                 <div className="col-lg-7">
-                                    <form action="" className="form">
+                                    <form onSubmit={submitHandle} className="form">
                                         <div className="row">
                                             <div className="col-12">
                                                 <div className="form__div">
-                                                    <input  required type="text" className="form-control" placeholder=" " />
+                                                    <input  name='card_number' type="text" className="form-control" placeholder=" " />
                                                     <label htmlFor="" className="form__label">Card Number</label>
                                                 </div>
                                             </div>
 
                                             <div className="col-6">
                                                 <div className="form__div">
-                                                    <input  required type="text" className="form-control" placeholder=" " />
+                                                    <input name='card_date'  type="text" className="form-control" placeholder=" " />
                                                     <label htmlFor="" className="form__label">MM / yy</label>
                                                 </div>
                                             </div>
 
                                             <div className="col-6">
                                                 <div className="form__div">
-                                                    <input  type="password" className="form-control" placeholder=" " />
+                                                    <input name='card_password'  type="password" className="form-control" placeholder=" " />
                                                     <label htmlFor="" className="form__label">cvv code</label>
                                                 </div>
                                             </div>
                                             <div className="col-12">
                                                 <div className="form__div">
-                                                    <input  type="text" className="form-control" placeholder=" " />
+                                                    <input name='card_name' type="text" className="form-control" placeholder=" " />
                                                     <label htmlFor="" className="form__label">name on the card</label>
                                                 </div>
                                             </div>
                                             <div className="col-12">
-                                                <div className="btn btn-primary w-100">
-                                                    <button onClick={submitHandle}  >Sumbit</button>
-                                                </div>
+                                                    <input className="btn btn-primary w-100" type='submit'   value="Gönder" />
+                                              
                                             </div>
                                         </div>
                                     </form>
@@ -180,12 +198,11 @@ const AnotherPage = ({ searchParams } : { searchParams: SearchParams }) => {
             </div>
          { isLoading   && 
           <div className="modal-overlay">
-          <div className="modals">
+      
          <div className="spinner-container">
                 <div className="loading-spinner">
                 
                 </div>
-        </div>
         </div>
         </div>
         }
@@ -198,6 +215,8 @@ const AnotherPage = ({ searchParams } : { searchParams: SearchParams }) => {
         </div>
         </div>
         }
+         <ToastContainer />
+     
         </div>
     </div>
     )
