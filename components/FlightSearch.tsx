@@ -122,7 +122,7 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ data }) => {
         ) }
         {value && (
              <div className="modal-overlay">
-             <div className="modal">
+             <div className="modals">
              <button className="close-button" onClick={()=>SetValue(false)}>X</button>
              <table className="table styled-table" >
                

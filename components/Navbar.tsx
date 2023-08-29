@@ -8,9 +8,6 @@ const Navbar = () => {
   const navigation = [
     "Home",
     "Features",
-    "Pricing",
-    "Company",
-    "Blog",
   
   ];
 

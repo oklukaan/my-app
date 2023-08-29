@@ -1,22 +1,33 @@
 import React from 'react';
 import '@/components/seatle.css';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
+import Router  from 'next/router';
 
 interface SeatleProps {
     emptySeats?: number;
     filledSeats?: number;
+    city?: string;
+    price?:number;
+    arrival?:string;
   }
   
 
 
-const Seatle: React.FC<SeatleProps> = ({emptySeats,filledSeats}) => {
+const Seatle: React.FC<SeatleProps> = ({emptySeats,filledSeats,price,city,arrival}) => {
     const notify = () => toast("En Fazla 5 adet koltuk seçebilirsiniz !");
 
-    console.log("emptySeats",filledSeats,emptySeats);
+    console.log("emptySeats",filledSeats,emptySeats,city,arrival);
     const [seatle, setSeatle] = useState<any[]>([]);
     const [warning,setWarning] =useState(Boolean);
+    const [totalPrice,setTotalPrice]=useState<any>("");
+    const [myCity,setCity]=useState<any>(city);
+    const [myArrival,setMyArrival]=useState<any>(arrival);
+
+
+    const [myPrice ,setMyPrice]=useState<any>(price)
 
 
     const array: number[] = [1, 2, 3,4,5,6,7,8,9,10,11,12];
@@ -29,6 +40,7 @@ const Seatle: React.FC<SeatleProps> = ({emptySeats,filledSeats}) => {
             return prevSeats.filter(seat => seat !== clickedSeat);
           } else {
             if (prevSeats.length < 5) {
+                
                 return [...prevSeats, clickedSeat];
               } else {
                 setWarning(true);
@@ -38,7 +50,14 @@ const Seatle: React.FC<SeatleProps> = ({emptySeats,filledSeats}) => {
           }
         });
       };
+      useEffect(() => {
+        const newTotalPrice = seatle.length * myPrice;
+        setTotalPrice(newTotalPrice);
+      }, [seatle]);
       if(seatle.length === 5)  notify();
+ 
+
+   
       
     console.log("set",seatle);
     return (
@@ -98,6 +117,33 @@ const Seatle: React.FC<SeatleProps> = ({emptySeats,filledSeats}) => {
             </ol>
             {warning && (<div>En fazla 6 tane koltuk seçilebilir</div>)}
             <div className="exit"></div>
+            <div className='basket'>
+               
+                <div className='col'>
+                    <div className='row'>Total Price</div>
+                    <div className='row'>{totalPrice}</div>
+                </div>
+                <div className='col'>
+                    <div className='row'>
+                    <Link className='btn btn-primary payment'
+        href={{
+          pathname: '/payment',
+          query: {
+            totalPrice: totalPrice,
+            city:myCity,
+            arrival:myArrival,
+            seatle:seatle
+          }
+        }}
+      >
+                        Ödeme Sayfası
+                        </Link>
+                    </div>
+                </div>
+               
+
+
+            </div>
             <ToastContainer />
         </div>
     )

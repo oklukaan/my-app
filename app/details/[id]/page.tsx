@@ -42,7 +42,7 @@ const DetailPage = ({ params }: { params: DetailPageParams }) => {
       <p>Empty Seats: {targetData.empty_seats}</p>
       <p>Filled Seats: {targetData.filled_seats}</p>
       <p>Price: {targetData.price}</p>
-      <Seatle  emptySeats={targetData.empty_seats}  filledSeats={targetData.filled_seats}/>
+      <Seatle city={targetData.city} arrival={targetData.arrival}  price={targetData.price} emptySeats={targetData.empty_seats}  filledSeats={targetData.filled_seats}/>
       
     </div>
   );
