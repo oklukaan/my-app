@@ -22,7 +22,7 @@ Projeyi aşağıdaki komutla başlatın: `npm start`
 
 ## Kullanım
 
-Projeyi başlattıktan sonra, tarayıcınızda `http://localhost:3000` adresine giderek uygulamayı görebilirsiniz.
+Projeyi başlattıktan sonra, tarayıcınızda `http://localhost:3000` adresine giderek uygulamayı görebilirsiniz.burada uygulamayı localhost:3000 de çalıştırmak önemli
 
 ## Canlı ortam
 
