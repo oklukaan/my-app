@@ -4,7 +4,6 @@ import { useState,useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
-import Router  from 'next/router';
 
 interface SeatleProps {
     emptySeats?: number;
@@ -120,12 +119,12 @@ const Seatle: React.FC<SeatleProps> = ({emptySeats,filledSeats,price,city,arriva
             <div className='basket'>
                
                 <div className='col'>
-                    <div className='row'>Total Price</div>
+                    <div className='row'>Total Price TL</div>
                     <div className='row'>{totalPrice}</div>
                 </div>
                 <div className='col'>
                     <div className='row'>
-                    <Link className='btn btn-primary payment'
+                    <Link className='btn custom-payment'
         href={{
           pathname: '/payment',
           query: {
