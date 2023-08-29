@@ -43,7 +43,7 @@ const DetailPage = ({ params }: { params: DetailPageParams }) => {
       <p>Empty Seats: {targetData.empty_seats}</p>
       <p>Filled Seats: {targetData.filled_seats}</p>
       <p>Price: {targetData.price}</p> */}
-      <div className="row">
+      <div className="rows">
         <div className="col">
         <div className="title">Kalkış Yeri {'=>'}</div>
           <div className="title">Variş Yeri {'=>'}</div>

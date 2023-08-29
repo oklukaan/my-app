@@ -48,7 +48,9 @@ const AnotherPage = ({ searchParams } : { searchParams: SearchParams }) => {
                 setTimeout(()=>{
                     setIsLoading(false);
                     setIsModal(true);
-                    router.push('/');
+                    setTimeout(()=>{
+                        router.push('/');
+                    },2000)
                 },1000)
 
               

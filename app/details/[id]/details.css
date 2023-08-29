@@ -1,6 +1,7 @@
-.row{
+.rows{
     display: flex;
     gap: 25px;
+    width: 25%;
 }
 .m-0-auto{
     margin:  0 auto;
