@@ -6,9 +6,9 @@ Bu proje, Lojiper'e ait mülakat ile ilgili bir projeyi içermektedir.
 
 ## Kurulum
 
-
-1. Proje klasörüne gidin: `cd my-app`
-2. Bağımlılıkları yükleyin: `npm install`
+1. Proje yi klonlayın:  `git clone https://github.com/oklukaan/my-app.git`
+2. Proje klasörüne gidin: `cd my-app`
+3. Bağımlılıkları yükleyin: `npm install`
 
 npm run dev
 # or
